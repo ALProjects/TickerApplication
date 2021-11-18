@@ -1,2 +1,2 @@
-web: gunicorn locallibrary.wsgi --log-file -
+web: gunicorn HextomTakeHome.wsgi --log-file -
 worker: celery worker --app=tasks.app
