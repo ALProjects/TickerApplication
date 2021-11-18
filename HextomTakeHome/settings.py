@@ -151,8 +151,8 @@ EMAIL_USE_TLS = True
 CELERY_TIMEZONE = "America/Toronto"
 CELERY_TASK_TIME_LIMIT = 600
 
-CELERY_BROKER_URL = 'redis://127.0.0.1:6379/0'
-CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379/0'
+CELERY_BROKER_URL = os.getenv('REDIS_URL')
+CELERY_RESULT_BACKEND = os.getenv('REDIS_URL')
 
 CELERY_BEAT_SCHEDULE = {
     'email-every-hour-between-9-to-5': {
