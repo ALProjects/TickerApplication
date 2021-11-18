@@ -35,7 +35,7 @@ def index(request):
             email = form.cleaned_data['subscriber_email']
             fetched_ticker = yf.Ticker(ticker.upper())
             ticker_price = (fetched_ticker.info['regularMarketPrice'])
-            if TickerModel.objects.filter(subscriber_email=email, ticker=ticker):
+            if TickerModel.objects.filter(subscriber_email=email, ticker=ticker.upper()):
                 # This ticker already exists
                 print("Ticker already exists")
             else:

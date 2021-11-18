@@ -1,6 +1,5 @@
 from .models import TickerModel
 from celery import shared_task
-from celery.contrib import rdb
 from django.core.mail import send_mail
 from django.conf import settings
 
@@ -38,7 +37,6 @@ def update_prices():
         ticker_set.add(ticker_model.ticker)
     # Update the ticker prices
     for ticker in ticker_set:
-        print(ticker)
         fetched_ticker = yf.Ticker(ticker.upper())
         updated_ticker_price = (fetched_ticker.info['regularMarketPrice'])
         TickerModel.objects.filter(ticker=ticker).update(ticker_price=updated_ticker_price)
