@@ -33,7 +33,6 @@ def update_tickers_and_email():
 @shared_task
 def update_prices():
     ticker_set = set()
-
     # Update the ticker prices
     for ticker in ticker_set:
         fetched_ticker = yf.Ticker(ticker.upper())
