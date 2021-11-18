@@ -1,2 +1,2 @@
 web: gunicorn HextomTakeHome.wsgi --log-file -
-worker: celery worker --app=tasks.app
+worker: celery -A HextomTakeHome worker -l info
