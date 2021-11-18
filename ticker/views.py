@@ -26,7 +26,7 @@ def send_update(request, sub_id):
 
 
 def index(request):
-    subscriptionArray = []
+    subscription_array = []
 
     if request.method == 'POST':
         form = SubscribeForm(request.POST)
@@ -49,10 +49,10 @@ def index(request):
         form = SubscribeForm()
 
     for ticker in TickerModel.objects.all():
-        subscriptionArray.append(ticker)
+        subscription_array.append(ticker)
 
     context = {
         'form': form,
-        'subscriptions': subscriptionArray
+        'subscriptions': subscription_array
     }
     return render(request, 'index.html', context)
