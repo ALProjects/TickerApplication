@@ -78,7 +78,6 @@ pyparsing==2.4.7
 pyRFC3339==1.1
 pytest==6.1.2
 pytest-cov==2.10.1
-python-apt==2.0.0+ubuntu0.20.4.3
 python-crontab==2.6.0
 python-dateutil==2.7.3
 python-debian===0.1.36ubuntu1
