@@ -56,4 +56,3 @@ def index(request):
         'subscriptions': subscriptionArray
     }
     return render(request, 'index.html', context)
-
