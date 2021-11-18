@@ -41,7 +41,7 @@ def index(request):
             else:
                 ticker_info = TickerModel()
                 ticker_info.subscriber_email = email
-                ticker_info.ticker = ticker
+                ticker_info.ticker = ticker.upper()
                 ticker_info.ticker_price = ticker_price
                 ticker_info.save()
                 form = SubscribeForm()
