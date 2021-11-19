@@ -39,12 +39,16 @@ def index(request):
                 # This ticker already exists
                 print("Ticker already exists")
             else:
-                ticker_info = TickerModel()
-                ticker_info.subscriber_email = email
-                ticker_info.ticker = ticker.upper()
-                ticker_info.ticker_price = ticker_price
-                ticker_info.save()
-                form = SubscribeForm()
+                try:
+                    ticker_info = TickerModel()
+                    ticker_info.subscriber_email = email
+                    ticker_info.ticker = ticker.upper()
+                    ticker_info.ticker_price = ticker_price
+                    ticker_info.save()
+                    form = SubscribeForm()
+                except:
+                    form=SubscribeForm()
+                    pass
     else:
         form = SubscribeForm()
 
